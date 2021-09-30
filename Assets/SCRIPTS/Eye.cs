@@ -21,7 +21,7 @@ public class Eye : MonoBehaviour
         }         
     }
         void OnMouseDown() {
-            clone = Instantiate(gameObject);
+            clone = Instantiate(gameObject, transform.parent);
             clone.SetActive (false) ;
 
             isFalling = true;
