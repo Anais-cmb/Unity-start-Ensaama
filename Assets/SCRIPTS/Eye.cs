@@ -6,6 +6,7 @@ public class Eye : MonoBehaviour
 {
     public Transform target;
     public bool isFalling = false;
+    public GameObject clone;
     // Start is called before the first frame update
     void Start()
     {   
@@ -20,13 +21,16 @@ public class Eye : MonoBehaviour
         }         
     }
         void OnMouseDown() {
+            clone = Instantiate(gameObject);
+            clone.SetActive (false) ;
 
             isFalling = true;
             Rigidbody body = gameObject.AddComponent<Rigidbody>();
 
             // "traînée angulaire, c-à-d la friction associée à la rotation
             // 0.05 par défaut, nous mettons donc 0.2f pour ralentir les yeux.
-            body.angularDrag = 0.2f; 
+            body.angularDrag = 1.0f;
+            body.drag = 0.5f; 
 
             Debug.Log("i'm falliiiiing!!");
             StartCoroutine (FallEnd());           
@@ -39,5 +43,7 @@ public class Eye : MonoBehaviour
             isFalling = false;
 
             Debug.Log ("Well, finally it's ok, i'm still alive");
+
+            clone.SetActive (true);
         }
 }
