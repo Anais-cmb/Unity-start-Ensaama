@@ -7,15 +7,22 @@ public class Eye : MonoBehaviour
     public Transform target;
     // Start is called before the first frame update
     void Start()
-    {
-        
+    {   
     }
-
     // Update is called once per frame
     void Update()
     {
        if (target != null) {
             transform.LookAt(target);
-        } 
+        }         
     }
+        void OnMouseDown() {
+
+            // Debug.Break();
+            target = null;
+            gameObject.AddComponent<Rigidbody>();
+
+            
+        }
+
 }
