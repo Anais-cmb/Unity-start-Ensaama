@@ -5,6 +5,7 @@ using UnityEngine;
 public class Eye : MonoBehaviour
 {
     public Transform target;
+    public bool isFalling = false;
     // Start is called before the first frame update
     void Start()
     {   
