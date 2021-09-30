@@ -14,16 +14,20 @@ public class Eye : MonoBehaviour
     void Update()
     {
        if (target != null) {
+           if (isFalling == false){
             transform.LookAt(target);
+           }
         }         
     }
         void OnMouseDown() {
 
-            // Debug.Break();
-            target = null;
-            gameObject.AddComponent<Rigidbody>();
+            isFalling = true;
+            Rigidbody body = gameObject.AddComponent<Rigidbody>();
 
-            
+            // "traînée angulaire, c-à-d la friction associée à la rotation
+            // 0.05 par défaut, nous mettons donc 0.2f pour ralentir les yeux.
+            body.angularDrag = 0.2f;            
         }
 
+        
 }
