@@ -609,6 +609,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   target: {fileID: 942256419}
+  isFalling: 0
+  clone: {fileID: 0}
 --- !u!1001 &3806996393403778766
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -697,3 +699,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   target: {fileID: 942256419}
+  isFalling: 0
+  clone: {fileID: 0}
