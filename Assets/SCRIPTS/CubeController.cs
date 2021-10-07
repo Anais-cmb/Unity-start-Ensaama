@@ -36,6 +36,7 @@ public class CubeController : MonoBehaviour
             move.y = jumpSpeed;
             body.velocity = move;
 
+            //vitesse de rotation aléatoire sur le cube
             body.angularVelocity = Random.onUnitSphere * jumpAngularSpeed;
         }
     }
